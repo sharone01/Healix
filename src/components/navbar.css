@@ -1,16 +1,13 @@
  nav{
-
 background:#014E4E;
 display: flex;
 gap: 200px;
-padding: 1rem 2rem;
- /* padding: 15px 50px;  */
+/* padding: 1rem 2rem; */
+ padding: 15px 50px; 
 border-radius: 20px 20px 0 0;
 justify-content: space-between;
 align-items: center;
 border-bottom: 1px solid #ffffff1a;
-margin-top: 50px;
-
 }
 .nav-container{
     display: flex;
@@ -45,8 +42,9 @@ nav button {
     border-radius: 25px;
     background:#F9D67B; 
     border: none;
-     padding: 10px 20px; 
+    padding: 15px 25px;
     cursor: pointer; 
+    white-space: nowrap;
 } 
 
 
