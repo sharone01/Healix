@@ -46,6 +46,24 @@ nav button {
     cursor: pointer; 
     white-space: nowrap;
 } 
+.dropdown {
+  position: absolute;
+  top: 140px;
+  left:100px;
+  background: #F9D67b; 
+  list-style: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.dropdown li {
+  margin: 5px 0;
+}
+
+.dropdown a {
+  color: #222;
+  text-decoration: none;
+}
 
 
 

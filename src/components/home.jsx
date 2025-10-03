@@ -37,6 +37,7 @@ import fivestars from '../assets/5stars.jpg'
 
 import React, { useEffect} from 'react';
 import testimonialimage1 from '../assets/testimonial-image-1.jpg'
+import testimonialimage2 from '../assets/testimonial-image-2.jpg'
 import testimonialimage3 from '../assets/testimonial-image-3.jpg'
 import logo from "../assets/logo.svg"
 import star from '../assets/star.jpg'
@@ -45,13 +46,32 @@ import post1 from '../assets/post-1.jpg'
 import post2 from '../assets/post-2.jpg'
 import post3 from '../assets/post-3.jpg'
 import videobg from '../assets/videobg.jpg'
-
-
-
+import X from '../assets/x.jpg'
+import fb from '../assets/fb.jpg'
+import pinterest from '../assets/pinterest.jpg'
+import ig from '../assets/ig.jpg'
 
 
 
 const Home = () => {
+
+  // CONNECTING MULTIPLE SECTIONS TO THE SAME ANCHOR TAG (KNOW MORE BUUTON)
+
+  const scrollToSections = () => {
+  document.getElementById("2").scrollIntoView({ behavior: "smooth" });
+  setTimeout(() => {
+    document.getElementById("3").scrollIntoView({ behavior: "smooth" });
+  }, 1000); // scroll after 1 second
+   setTimeout(() => {
+    document.getElementById("4").scrollIntoView({ behavior: "smooth" });
+  }, 1000);
+   setTimeout(() => {
+    document.getElementById("5").scrollIntoView({ behavior: "smooth" });
+  }, 1000);
+   setTimeout(() => {
+    document.getElementById("6").scrollIntoView({ behavior: "smooth" });
+  }, 1000);
+};
 
 
    const cardData = [
@@ -95,14 +115,20 @@ const Home = () => {
             {/* HERO SECTION */}
 
 
-<section className="hero">
+<section className="hero" id='1'>
   <div className="hero-text">
     <p className="welcome">✨ Welcome To Healix</p>
     <h1>Transform your<br/> health<br/>embrace <br/>life today</h1>
     <p>Achieve your wellness goals with personalized guidance, expert support, and <br/>
     sustainable habits for a healthier, happier you..</p><br/><br/>
     <div className='d-flex gap-4 align-items-center'>
-      <button >Know More</button>
+      <button >
+        <a href='#2' onClick={scrollToSections} >Know More</a>
+        </button>
+
+  {/* <a href="#about">About Us</a> / <a href="#services">Services</a> */}
+
+
     <div className='num gap-3 d-flex'>
       <img className='circle-1 call-icon' src = {CallIcon}/>
       <span> Call us 24/7 <br/>
@@ -138,7 +164,7 @@ const Home = () => {
 
 
        {/* ABOUT US  */}
-  
+  <section id='2'>
         <div className='about-section'>
             <div className='about-images cols-6'>
                 <img src= {about1} className='about-img img-1'/>
@@ -190,11 +216,12 @@ const Home = () => {
        </div>
         </div> 
         </div>
+</section>
         <br/><br/><br/>
 
 {/* SERVICES SECTION */}
 
-<div className='services-section'>
+<section className='services-section' id='3'>
      <div className='grid-container'>
 
          <div className=' first-item'>
@@ -280,7 +307,7 @@ const Home = () => {
           </div>
         
      </div><br/>
-     <div className='services-footer text-align-center justify-contents-center align-items-center'>
+     <div className='services-footer text-align-center justify-contents-center align-items-center ms-1000px'>
     <p className='d-flex' ><span>Free</span> 
     Let’s make something great work together.
      <a className='free-quote nav-link active text-success text-decoration-underline fw-bold' href='#'>Get Free Quote</a>
@@ -288,11 +315,11 @@ const Home = () => {
 
      </div>
 
-</div><br/>
+</section><br/>
 
   {/* WHAT WE DO SECTION */}
 
-<section className='weDo-section'> {/* three sections */}
+<section className='weDo-section' id='4'> {/* three sections */}
   
    {/* first section image */}
   <div className='weDo-1'>
@@ -367,7 +394,7 @@ const Home = () => {
 
 {/* WHY CHOOSE US  */}
 
-<section className='choose text-white'>
+<section className='choose text-white' id='5'>
   <h4>✨ Why Choose Us</h4>
 
   <div className='choose-1'>
@@ -450,7 +477,7 @@ const Home = () => {
 
     {/* our expertise section */}
 
-<section className='expertise'>
+<section className='expertise' id='6'>
   <h4 >✨ Our Expertise</h4>
   <div className='expertext '>
     <h1>Mastering wellness for<br/> your success</h1>
@@ -494,7 +521,7 @@ const Home = () => {
 
    {/* OUR VIDEOS OUR VIDEOS OUR VIDEOS OUR VIDEOS!!! */}
 
-   <section style={{
+   <section id='7' style={{
     marginBottom:'2.5rem'
     
    }}>
@@ -517,6 +544,7 @@ const Home = () => {
         
         
       }}/>
+      
     <div style={{
       
       color: 'white',
@@ -525,6 +553,7 @@ const Home = () => {
       marginTop:'10%',
       
     }}>
+      
       <h4> ✨ Our Video</h4><br/>
       <h1 style={{
         fontSize:'3.5rem',
@@ -541,6 +570,31 @@ const Home = () => {
         background: '#F9D67B',
         padding: '15px 25px'
       }}><a to='#'>Explore More</a></button>
+
+
+      {/* <button aria-label="Play video" className="play-btn">
+  <div className="ring-wrap">
+    
+    <svg width="200" height="200" viewBox="0 0 200 200" className="rotate-slow">
+      <defs>
+        <path id="ringPath" d="M100,12 a88,88 0 1,1 0,176 a88,88 0 1,1 0,-176" />
+      </defs>
+      <text className="ring-text">
+        <textPath href="#ringPath" startOffset="0%">
+          • Health Coaching Video • Health Coaching Video • Health Coaching Video •
+        </textPath>
+      </text>
+      <circle cx="100" cy="100" r="84" className="fill-none" />
+    </svg>
+
+    <span className="play-pill">
+      <FiPlay className="h-8 w-8" />
+    </span>
+  </div>
+</button> */}
+
+
+    
 
 
       <div  style={{
@@ -599,7 +653,7 @@ const Home = () => {
 
  {/* programs */}
 
- <section className='programs'>
+ <section className='programs' id='8'>
   <h4>✨ Our Programs</h4><br/>
 
   <div className='program-txtbtn'>
@@ -642,7 +696,7 @@ const Home = () => {
 
    {/* HOW IT WORKS */}
 
-<section className='work text-white'>
+<section className='work text-white' id='9'>
   <h4 className='pt-5'>✨ How It Work</h4>
   <div className='work-txt '>
     <h1>Step-by-step guide to<br/>
@@ -701,7 +755,7 @@ const Home = () => {
 
 
 {/* book appointmments */}
-<section className='appointment '>
+<section className='appointment ' id='10'>
   
   <h4 className='text-success'>✨ Appointment</h4>
   <div className='appoint d-flex justify-content-space-between gap-5 '>
@@ -748,7 +802,7 @@ const Home = () => {
 {/*        
          FREQUENTLY ASKED QUESTIONS SECTIONS */}
 
-<section className='FAQ-section'>
+<section className='FAQ-section' id='11'>
 
   
       <div className='faq-images  '>
@@ -845,7 +899,7 @@ const Home = () => {
   </div>
 </section><br/><br/><br/>
 
-<section className='Testimonials'>
+<section className='Testimonials' id='12'>
  
 <div className='testimonial-cont'>
   <div className='left-side'>
@@ -963,7 +1017,7 @@ const Home = () => {
   {/* IMAGES */}
   <div className='right-side ' >
          <img src= {testimonialimage1} className='image-1 '/>
-         <img src= {faq1} className='image-2'/>
+         <img src= {testimonialimage2} className='image-2'/>
          <img src= {testimonialimage3} className='image-3 '/>
 
        <div className='founder-1 gap-4 '> 
@@ -990,7 +1044,7 @@ const Home = () => {
 
 
       {/* OUR BLOGS !!!!! */}
- <section className='Blogs'>
+ <section className='Blogs' id='13'>
         <h4 className='text-success'>✨ Our Blog</h4>
       <div className='blog mb-5'>
         <h1 className='fw-bolder'>Expert tips for better<br/> health and wellness</h1>
@@ -1038,7 +1092,7 @@ const Home = () => {
 
              {/* FOOTER FOOTER FOOTER FOOTER SECTION !!!! */}
 
-  <section className='footer-container text-white'>
+  <section className='footer-container text-white' id='14'>
   <div className='footer'>
     <div className='footer-first'>
       <img src= {logo} className='mb-4'/><br/>
@@ -1073,7 +1127,7 @@ const Home = () => {
     <div className='footer-second-main'>
       <div className='footer-second-sub '>
     <div className='serv-links text-start'>
-      <h5>Services</h5><br/>
+      <h5 className='ms-5'>Services</h5><br/>
       <ul className='ul-1 text-start'>
         <li><a className='nav-link active' href='#'><strong>Chronic Management</strong></a></li>
         <li><a className='nav-link active' href='#'><strong>Group Coaching Sessions</strong></a></li>
@@ -1082,7 +1136,7 @@ const Home = () => {
     </div>
 
     <div className='text-start'>
-      <h5  className=''>Working Hours</h5><br/>
+      <h5  className='ms-5'>Working Hours</h5><br/>
       <ul className='ul-2'>
         <li>Mon - Fri : 9:00am - 18:00pm</li>
         <li>Saturday : 9:00am - 16:00pm</li>
@@ -1091,15 +1145,108 @@ const Home = () => {
     </div>
 
     </div><br/>
-    <p><strong>Follow on</strong>
+    <div style={{
+      display:'flex',
+      justifyContent:'left',
+      alignItems:'center'
+
+    }} >
+    <p className='ms-5'><strong>Follow on</strong>  </p> 
     
-    <div>
-      <img/>
-      <img/>
-      <img/>
-      <img/>
+    <div className='footer-icons'
+    style={{
+      display:'flex',
+      gap:'20px'
+    }}>
+      <div className='circle'
+       style={{
+        height:'40px',
+        width:'40px',
+        borderRadius:'50px',
+        display: 'flex',
+        alignitems: 'center',
+        justifycontent: 'center',
+        position:'relative',
+        fontsize: '20px',
+        transition: 'transform 0.3s',
+        border: '1px solid #ffffff1a',
+        background:'#014e4e'
+      }}>
+         <img style={{
+        width:'40px',
+        height:'40px',
+        color:'white'
+
+      }}  
+      src={pinterest}/> </div>
+     
+     <div className='circle'
+      style={{
+        height:'40px',
+        width:'40px',
+        borderRadius:'50px',
+        display: 'flex',
+        alignitems: 'center',
+        justifycontent: 'center',
+        position:'relative',
+        padding:'10px',
+        fontsize: '20px',
+        transition: 'transform 0.3s',
+        border: '1px solid #ffffff1a',
+      }}>
+        <img style={{
+        width:'20px',
+        height:'20px'
+        
+
+      }}   src= {X}/></div>
+      
+      <div className='circle' style={{
+        height:'40px',
+        width:'40px',
+        borderRadius:'50px',
+        display: 'flex',
+        alignitems: 'center',
+        justifycontent: 'center',
+         position:'relative',
+        fontweight: 'bold',
+        fontsize: '20px',
+        padding:'10px',
+        transition: 'transform 0.3s',
+        border: '1px solid #ffffff1a',
+
+        
+      }}>
+        <img style={{
+        width:'20px',
+        height:'20px',
+        
+
+      }}   src= {fb}/></div>
+      <div className='circle' style={{
+        height:'40px',
+        width:'40px',
+        borderRadius:'50px',
+        padding:'10px',
+        display: 'flex',
+        alignitems: 'center',
+        justifycontent: 'center',
+         position:'relative',
+        fontweight: 'bold',
+        fontsize: '20px',
+        transition: 'transform 0.3s',
+        border: '1px solid #ffffff1a',
+        background:'#014e4e'
+      }}> 
+      <img style={{
+        width:'20px',
+        height:'20px'
+
+      }}   src= {ig}/></div>
+
     </div>
-    </p> 
+    </div>
+   
     </div>
 
     </div>
@@ -1123,15 +1270,13 @@ const Home = () => {
 
   </div>
 
-  </section>           
+  </section>    
 
-
-
-
+ 
 
   </div>
     );
   
 };
    
-export default Home
+export default Home 

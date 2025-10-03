@@ -11,6 +11,7 @@ import Contact from "./components/contact"
 
 
 
+
 function  App() {
   
 
@@ -25,6 +26,7 @@ function  App() {
           <Route path="/" element = {<Blog/>}/>
           <Route path="/" element = {<Pages/>}/>
           <Route path ="/" element = {<Contact/>}/>
+          
 
         </Routes>
         </div>
